@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Буцаан олголтын баталгаажуулалт</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Гүйлгээ амжилттай</title>
     <style>
         * {
             margin: 0;
@@ -16,646 +15,308 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 10px;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
 
         .container {
-            max-width: 900px;
-            width: 100%;
-            background: #ffffff;
+            background: white;
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            animation: slideIn 0.6s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            max-width: 400px;
+            width: 100%;
             padding: 40px 30px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 1;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
         .success-icon {
-            font-size: 80px;
-            margin-bottom: 20px;
-            animation: bounce 1s ease-in-out infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .header h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .header p {
-            font-size: 18px;
-            opacity: 0.95;
-        }
-
-        .content {
-            padding: 40px 30px;
-        }
-
-        .intro {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #2c3e50;
-            line-height: 1.9;
-            font-size: 18px;
-            font-weight: 600;
-            padding: 25px;
-            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
-            border-radius: 15px;
-            border-left: 6px solid #e17055;
-            box-shadow: 0 8px 25px rgba(253, 203, 110, 0.4);
-            animation: slideInLeft 0.8s ease-out;
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .amount-box {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 40px 30px;
-            border-radius: 20px;
-            text-align: center;
-            margin-bottom: 40px;
-            box-shadow: 0 15px 40px rgba(245, 87, 108, 0.4);
-            transform: scale(1);
-            transition: transform 0.3s ease;
-            border: 3px solid #fff;
-            position: relative;
-            overflow: hidden;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 15px 40px rgba(245, 87, 108, 0.4); }
-            50% { box-shadow: 0 15px 50px rgba(245, 87, 108, 0.7), 0 0 30px rgba(245, 87, 108, 0.5); }
-        }
-
-        .amount-box::before {
-            content: '⚡';
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 50px;
-            opacity: 0.3;
-            animation: rotateIcon 3s linear infinite;
-        }
-
-        @keyframes rotateIcon {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .amount-box:hover {
-            transform: scale(1.03);
-        }
-
-        .amount-box .label {
-            font-size: 16px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            opacity: 1;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .amount-box .amount {
-            font-size: 64px;
-            font-weight: 900;
-            margin: 15px 0;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
-            letter-spacing: 2px;
-            animation: scaleAmount 2s ease-in-out infinite;
-        }
-
-        @keyframes scaleAmount {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .amount-box .description {
-            font-size: 16px;
-            opacity: 1;
-            font-weight: 600;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-        }
-
-        .guarantees {
-            margin-bottom: 40px;
-        }
-
-        .guarantees h2 {
-            color: #667eea;
-            margin-bottom: 25px;
-            font-size: 24px;
-            text-align: center;
-        }
-
-        .guarantee-item {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #5cb85c 0%, #4cae4c 100%);
+            border-radius: 50%;
+            margin: 0 auto 30px;
             display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-            padding: 20px;
-            background: #f8f9ff;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            opacity: 0;
-            animation: fadeInUp 0.6s ease-out forwards;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(92, 184, 92, 0.4);
+            animation: scaleIn 0.5s ease-out;
         }
 
-        .guarantee-item:nth-child(2) { animation-delay: 0.1s; }
-        .guarantee-item:nth-child(3) { animation-delay: 0.2s; }
-        .guarantee-item:nth-child(4) { animation-delay: 0.3s; }
-        .guarantee-item:nth-child(5) { animation-delay: 0.4s; }
-        .guarantee-item:nth-child(6) { animation-delay: 0.5s; }
+        .success-icon::after {
+            content: '✓';
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+        }
 
-        @keyframes fadeInUp {
+        @keyframes scaleIn {
             from {
+                transform: scale(0);
                 opacity: 0;
-                transform: translateY(20px);
             }
             to {
+                transform: scale(1);
                 opacity: 1;
-                transform: translateY(0);
             }
         }
 
-        .guarantee-item:hover {
-            background: #e8ebff;
-            transform: translateX(5px);
-        }
-
-        .guarantee-icon {
-            font-size: 32px;
-            color: #667eea;
-            margin-right: 20px;
-            min-width: 40px;
-            animation: iconBounce 2s ease-in-out infinite;
-        }
-
-        @keyframes iconBounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-
-        .guarantee-text h3 {
+        h1 {
+            text-align: center;
             color: #333;
-            font-size: 18px;
-            margin-bottom: 8px;
+            font-size: 22px;
+            margin-bottom: 20px;
         }
 
-        .guarantee-text p {
-            color: #666;
+        .info-box {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 25px;
+            color: #155724;
+            font-size: 14px;
             line-height: 1.6;
+        }
+
+        .details {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: #6c757d;
             font-size: 14px;
         }
 
-        .procedure {
-            margin-bottom: 40px;
+        .detail-value {
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
         }
 
-        .procedure h2 {
-            color: #667eea;
-            margin-bottom: 25px;
-            font-size: 24px;
-            text-align: center;
+        .detail-value.amount {
+            color: #5cb85c;
+            font-size: 16px;
+        }
+
+        .progress-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 30px 0;
         }
 
         .step {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            margin-bottom: 20px;
-            padding: 20px;
-            background: #fff;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .step:hover {
-            border-color: #667eea;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
-            transform: translateY(-3px);
+            position: relative;
+            flex: 1;
         }
 
         .step-number {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            color: white;
             font-weight: bold;
-            margin-right: 20px;
-            flex-shrink: 0;
-            transition: all 0.3s ease;
+            font-size: 18px;
+            margin-bottom: 8px;
+            z-index: 2;
         }
 
-        .step:hover .step-number {
-            transform: rotate(360deg);
+        .step.completed .step-number {
+            background: linear-gradient(135deg, #5cb85c 0%, #4cae4c 100%);
         }
 
-        .step-text {
-            color: #333;
-            line-height: 1.6;
-            font-size: 15px;
+        .step.active .step-number {
+            background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
         }
 
-        .cta-section {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            padding: 30px;
-            border-radius: 15px;
+        .step-label {
+            font-size: 12px;
+            color: #6c757d;
             text-align: center;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(17, 153, 142, 0.3);
         }
 
-        .cta-section h3 {
-            color: white;
-            font-size: 22px;
-            margin-bottom: 15px;
+        .step-line {
+            position: absolute;
+            top: 22px;
+            left: 50%;
+            width: 100%;
+            height: 3px;
+            background: #5cb85c;
+            z-index: 1;
         }
 
-        .cta-section p {
-            color: white;
+        .step:last-child .step-line {
+            display: none;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 15px;
             margin-bottom: 20px;
-            opacity: 0.95;
-            line-height: 1.6;
+            display: flex;
+            gap: 12px;
+            font-size: 13px;
+            color: #856404;
+            line-height: 1.5;
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 15px 40px;
-            background: white;
-            color: #11998e;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            border: none;
+        .warning-icon {
+            font-size: 20px;
+            flex-shrink: 0;
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .footer {
-            background: #f8f9fa;
-            padding: 30px;
+        .total-amount {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 10px;
+            padding: 15px;
             text-align: center;
-            color: #666;
+            margin-bottom: 20px;
+            color: #0c5460;
+            font-size: 16px;
+            font-weight: 600;
         }
 
-        .footer-icon {
-            font-size: 40px;
-            color: #667eea;
+        .btn-primary {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #5cb85c 0%, #4cae4c 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
             margin-bottom: 15px;
-            animation: swing 2s ease-in-out infinite;
         }
 
-        @keyframes swing {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(10deg); }
-            75% { transform: rotate(-10deg); }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(92, 184, 92, 0.3);
         }
 
-        .footer p {
-            line-height: 1.8;
-            margin-bottom: 10px;
+        .btn-primary:active {
+            transform: translateY(0);
         }
 
-        .footer .highlight {
+        .btn-secondary {
+            width: 100%;
+            padding: 15px;
+            background: transparent;
             color: #667eea;
-            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
         }
 
-
-        @media (max-width: 768px) {
-            body {
-                padding: 5px;
-            }
-
-            .container {
-                border-radius: 15px;
-            }
-
-            .header {
-                padding: 30px 20px;
-            }
-
-            .header h1 {
-                font-size: 26px;
-            }
-
-            .header p {
-                font-size: 16px;
-            }
-
-            .success-icon {
-                font-size: 60px;
-            }
-
-            .content {
-                padding: 25px 15px;
-            }
-
-            .intro {
-                font-size: 16px;
-                padding: 20px 15px;
-            }
-
-            .amount-box {
-                padding: 30px 20px;
-            }
-
-            .amount-box .amount {
-                font-size: 48px;
-            }
-
-            .amount-box .label {
-                font-size: 14px;
-            }
-
-            .amount-box .description {
-                font-size: 14px;
-            }
-
-            .guarantees h2,
-            .procedure h2 {
-                font-size: 20px;
-            }
-
-            .guarantee-item {
-                flex-direction: row;
-                text-align: left;
-                padding: 15px;
-            }
-
-            .guarantee-icon {
-                font-size: 28px;
-                margin-right: 15px;
-                min-width: 35px;
-            }
-
-            .guarantee-text h3 {
-                font-size: 16px;
-            }
-
-            .guarantee-text p {
-                font-size: 13px;
-            }
-
-            .step {
-                flex-direction: row;
-                text-align: left;
-                padding: 15px;
-            }
-
-            .step-number {
-                width: 45px;
-                height: 45px;
-                font-size: 20px;
-                margin-right: 15px;
-            }
-
-            .step-text {
-                font-size: 14px;
-            }
-
-            .cta-section {
-                padding: 25px 20px;
-            }
-
-            .cta-section h3 {
-                font-size: 19px;
-            }
-
-            .cta-button {
-                padding: 12px 30px;
-                font-size: 15px;
-            }
-
-            .footer {
-                padding: 25px 20px;
-            }
-
-            .footer-icon {
-                font-size: 35px;
-            }
-
-            .footer p {
-                font-size: 14px;
-            }
-
-
-        }
-
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 22px;
-            }
-
-            .amount-box .amount {
-                font-size: 40px;
-            }
-
-            .guarantee-icon {
-                font-size: 24px;
-                min-width: 30px;
-            }
-
-            .step-number {
-                width: 40px;
-                height: 40px;
-                font-size: 18px;
-            }
+        .btn-secondary:hover {
+            background: #f8f9fa;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <div class="header-content">
-                <div class="success-icon">
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <h1>Баяр хүргэе</h1>
-                <p>Бүртгэл баталгаажсан, буцаан олголт бэлэн боллоо</p>
+        <div class="success-icon"></div>
+        
+        <h1>Гүйлгээ амжилттай боллоо</h1>
+        
+        <div class="info-box">
+            Бүх төлбөр амжилттай хийгдлээ. Гүйлгээг батлагаажуулахад болон байна.
+        </div>
+        
+        <div class="details">
+            <div class="detail-row">
+                <span class="detail-label">Банк:</span>
+                <span class="detail-value">Хаан банк</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Хүлээн авагч:</span>
+                <span class="detail-value">Пайвал Дулам</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Дансны дугаар:</span>
+                <span class="detail-value">5405298306</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Шилжүүлэх дүн:</span>
+                <span class="detail-value amount">2,500,000 MNT</span>
             </div>
         </div>
-
-        <div class="content">
-            <div class="intro">
-                <p>Таны бүртгэлийг манай баг албан ёсоор баталгаажуулсныг та хүргэж байна. Таны хэргийн буцаан олголтын дүн таны данс руу шилжүүлэхэд бэлэн боллоо.</p>
+        
+        <div class="progress-bar">
+            <div class="step completed">
+                <div class="step-number">1</div>
+                <div class="step-label">Гүйлгээ</div>
+                <div class="step-line"></div>
             </div>
-
-            <div class="amount-box">
-                <div class="label">Төлөх дүн</div>
-                <div class="amount">97,000 ₮</div>
-                <div class="description">Эцсийн баталгаажуулалтын нэг удаагийн төлбөр</div>
+            <div class="step completed">
+                <div class="step-number">2</div>
+                <div class="step-label">Төлбөр</div>
+                <div class="step-line"></div>
             </div>
-
-            <div class="guarantees">
-                <h2><i class="fas fa-shield-alt"></i> Бидний баталгаа</h2>
-
-                <div class="guarantee-item">
-                    <div class="guarantee-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <div class="guarantee-text">
-                        <h3>Бүрэн ил тод байдал</h3>
-                        <p>Та өөрийн хэргийн байдал болон баталгаажуулах баримт бичгүүдийг туслахаас хэдийд ч шалгаж болно.</p>
-                    </div>
-                </div>
-
-                <div class="guarantee-item">
-                    <div class="guarantee-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div class="guarantee-text">
-                        <h3>Төлбөрийн аюулгүй байдал</h3>
-                        <p>Бүх төлбөрийг аюулгүй, стандартад нийцсэн сувгуудаар дамжуулан боловсруулдаг.</p>
-                    </div>
-                </div>
-
-                <div class="guarantee-item">
-                    <div class="guarantee-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <div class="guarantee-text">
-                        <h3>Шууд шилжүүлэг</h3>
-                        <p>Төлбөрийг хүлээн авч, баталгаажуулмагц бид шилжүүлгийг эхлүүлж, дүн танд шууд шилжих болно.</p>
-                    </div>
-                </div>
-
-                <div class="guarantee-item">
-                    <div class="guarantee-icon">
-                        <i class="fas fa-file-invoice"></i>
-                    </div>
-                    <div class="guarantee-text">
-                        <h3>Нотолгоо ба хянах</h3>
-                        <p>Эцсийн шатанд албан ёсны баримт болон шилжүүлгийн нотолгоо (гүйлгээний код) өгөгдөнө.</p>
-                    </div>
-                </div>
-
-                <div class="guarantee-item">
-                    <div class="guarantee-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="guarantee-text">
-                        <h3>Багийн амлалт</h3>
-                        <p>Таны хэрэг аль хэдийн бэлэн болсон бөгөөд бид эцсийн шатанд байна — манай баг төлбөр баталгаажмагц саатуулгүй шилжүүлэг хийх амлалт өгч байна.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="procedure">
-                <h2><i class="fas fa-list-ol"></i> Энгийн журам</h2>
-
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-text">
-                        Заасан төлбөрийн аргуудын аль нэгээр 97,000 ₮ төлбөрийг төлнө үү.
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-text">
-                        Төлбөрийн нотолгоо (дэлгэцийн зураг эсвэл гүйлгээний код) туслахад илгээнэ үү.
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-text">
-                        Туслах хэдэн минутын дотор гүйлгээг шалгаж, шууд шилжүүлэг хийнэ. Дараа нь та баталгаажуулалт болон шилжүүлгийн нотолгоог хүлээн авна.
-                    </div>
-                </div>
-            </div>
-
-            <div class="cta-section">
-                <h3><i class="fas fa-headset"></i> Тусламж авах боломжтой</h3>
-                <p>Асуулт эсвэл шалгалт хийх шаардлагатай бол туслах таны буцаан олголтыг баталгаажуулж, дуусгахад бэлэн байна.</p>
-                <button class="cta-button">
-                    <i class="fas fa-comments"></i> Туслахтай холбогдох
-                </button>
+            <div class="step active">
+                <div class="step-number">3</div>
+                <div class="step-label">Амжилттай байдлаар</div>
             </div>
         </div>
-
-        <div class="footer">
-            <div class="footer-icon">
-                <i class="fas fa-trophy"></i>
-            </div>
-            <p>Бидэнд итгэсэн танд баярлалаа.</p>
-            <p><strong class="highlight">Таны хэрэг баталгаажсанд баяр хүргэе</strong> — бид таны буцаан олголтыг хамгийн сайн нөхцөлд дуусгахад бүрэн хүч чармайлт гаргаж байна.</p>
+        
+        <div class="warning-box">
+            <span class="warning-icon">🔒</span>
+            <span>Амжилттай байдлын цааттаанаар таны гүйлгээг эцэслэхийн тулд батлагаажуулалтын төлбөр хийх шаардлагатай.</span>
         </div>
+        
+        <div class="total-amount">
+            Амжилттай байдлын төлбөр: 176,000 MNT
+        </div>
+        
+        <button class="btn-primary" onclick="confirmPayment()">
+            Амжилттай байдлын төлбөр төлөх
+        </button>
+        
+        <button class="btn-secondary" onclick="cancel()">
+            Дуусгах
+        </button>
     </div>
 
     <script>
-        // Simple notification removed - no JS effects
+        function confirmPayment() {
+            alert('Төлбөр төлөх үйлдэл эхэллээ...');
+            // Ici vous pouvez ajouter la logique de paiement
+        }
+
+        function cancel() {
+            if (confirm('Та гарахдаа итгэлтэй байна уу?')) {
+                alert('Гүйлгээ цуцлагдлаа');
+                // Ici vous pouvez rediriger l'utilisateur
+            }
+        }
     </script>
 </body>
 </html>
